@@ -14,41 +14,26 @@
 # Read the input.txt file
 def read_input():
     f = open('CSF101CAP/input_6_cap1.txt', 'r')
-    round=f.read()
-    print(round)
+    print(f.read())
     f.close()
 
-def calculate_score():
-    print("\n calculation:")
-    print("\nmarking system:\n win=6 \n lose=0 \n draw=3")
-    print("score will be added by\n 1 if rock\n 2 if paper \n 3 if sissor")
-    print("representaion:\n A is rock \n B is paper \n C is sissor \n x =lose \n y= draw \n z= win")
+def reader():
+    return open('CSF101CAP/input_6_cap1.txt', 'r')
 
-    f = open('CSF101CAP/input_6_cap1.txt', 'r')
-    rounds=f.read()
+def calculate_score(txt):
+   
     totalscore = 0
-    for round in rounds: 
-        opponentchoice =round  #appointing round to opponentchoice
-        
-        
-        if opponentchoice == "A":
-            totalscore += 1  #1 for rock
-        elif opponentchoice == "B":
-            totalscore += 2  #2 for paper
-        elif opponentchoice == "C":
-            totalscore += 3  #3 for sissors
-        elif opponentchoice == "X":
-            totalscore += 0 # 0 for losing
-        elif opponentchoice == "Y":
-            totalscore += 3  # 3 for draw 
-        elif opponentchoice == "Z":
-            totalscore += 6  # 6 for winning 
-       
+    store= {'A X': 2, 'A Y': 4, 'A Z': 9, 'B X': 1, 'B Y': 5, 'B Z': 7, 'C X': 1, 'C Y': 6, 'C Z': 7}
+    for round in txt: 
+        score=round.strip()
+        value=store.get(score,None)
+        if value is not None:
+            totalscore+=value
 
     print("Total Score:", totalscore)
-        
+                
 read_input()
-calculate_score()
+calculate_score(reader())
 
 
 

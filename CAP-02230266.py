@@ -8,7 +8,7 @@
 # https://youtu.be/TSHEnfUz6wk?si=D6w-DN9uMU0GxUaV
 ################################
 # SOLUTION
-# Your Solution Score:46637
+# Your Solution Score:50223
 # number: 6
 ################################
 # Read the input.txt file
